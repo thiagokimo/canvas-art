@@ -12,8 +12,8 @@ function init(){
 function drawTicTacToe(x, y, w, h){
 	ctx.moveTo(x, y);
 
-	var widthDelta = w/3;
-	var heightDelta = h/3;
+	var widthDelta = calculateDelta(w);
+	var heightDelta = calculateDelta(h);
 	
 	//vertical lines
 	ctx.moveTo(x + widthDelta, y);
@@ -32,6 +32,10 @@ function drawTicTacToe(x, y, w, h){
 	ctx.moveTo(x, 2 * heightDelta);
 	ctx.lineTo(w, 2 * heightDelta);
 	ctx.stroke();
+}
+
+function calculateDelta(value) {
+	return value/3;
 }
 
 init();

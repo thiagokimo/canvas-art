@@ -6,14 +6,41 @@ c.width = width;
 c.height = height;
 
 function init(){
-    var widthDelta = width
-	var heightDelta = height;
-    
-	while(widthDelta > 0 || heightDelta > 0) {
-		drawTicTacToe(0,0,widthDelta,heightDelta);
-		widthDelta = calculateDelta(widthDelta);
-		heightDelta = calculateDelta(heightDelta);
+	draw(0,0,width,height,true);
+}
+
+function draw(x,y,w,h,start){
+
+	var newWidth;
+	var newHeight; 
+
+	if(start){
+
+		if (w == width && h == height) {
+			
+			drawTicTacToe(0,0,w,h);
+
+			newWidth = calculateDelta(w);
+			newHeight = calculateDelta(h);
+
+			draw(x,y,newWidth,newHeight,false);
+		}
+		
 	}
+	else {
+
+		if(w > 0 && h > 0){
+			
+			drawTicTacToe(x,y,w,h);
+
+			newWidth = calculateDelta(w);
+			newHeight = calculateDelta(h);
+
+			draw(x,y,newWidth,newHeight,false);
+		}
+			
+	}
+
 }
 
 function drawTicTacToe(x, y, w, h){

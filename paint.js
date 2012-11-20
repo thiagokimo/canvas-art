@@ -6,7 +6,14 @@ c.width = width;
 c.height = height;
 
 function init(){
-    drawTicTacToe(0, 0, width, height);
+    var widthDelta = width
+	var heightDelta = height;
+    
+	while(widthDelta > 0 || heightDelta > 0) {
+		drawTicTacToe(0,0,widthDelta,heightDelta);
+		widthDelta = calculateDelta(widthDelta);
+		heightDelta = calculateDelta(heightDelta);
+	}
 }
 
 function drawTicTacToe(x, y, w, h){
@@ -35,7 +42,7 @@ function drawTicTacToe(x, y, w, h){
 }
 
 function calculateDelta(value) {
-	return value/3;
+	return parseInt(value/3);
 }
 
 init();

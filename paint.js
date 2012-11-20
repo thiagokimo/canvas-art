@@ -5,15 +5,15 @@ var ctx = c.getContext('2d');
 c.width = width;
 c.height = height;
 
-function init(){
-	draw(0,0,width,height,true);
+function init(){	
+	drawTicTacToe(480,480,width,height);
 }
-
 function draw(x,y,w,h,start){
 
 	var newWidth;
 	var newHeight; 
 
+	//condition to the first time
 	if(start){
 
 		if (w == width && h == height) {
@@ -29,6 +29,7 @@ function draw(x,y,w,h,start){
 	}
 	else {
 
+		//stop condition
 		if(w > 0 && h > 0){
 			
 			drawTicTacToe(x,y,w,h);
@@ -44,7 +45,6 @@ function draw(x,y,w,h,start){
 }
 
 function drawTicTacToe(x, y, w, h){
-	ctx.moveTo(x, y);
 
 	var widthDelta = calculateDelta(w);
 	var heightDelta = calculateDelta(h);
@@ -58,14 +58,14 @@ function drawTicTacToe(x, y, w, h){
 	ctx.lineTo(2 * widthDelta, h);
 	ctx.stroke();
 
-	//horizontal
-	ctx.moveTo(x, heightDelta);
-	ctx.lineTo(w, heightDelta);
-	ctx.stroke();
+	// //horizontal
+	// ctx.moveTo(x, heightDelta);
+	// ctx.lineTo(x*3, heightDelta);
+	// ctx.stroke();
 
-	ctx.moveTo(x, 2 * heightDelta);
-	ctx.lineTo(w, 2 * heightDelta);
-	ctx.stroke();
+	// ctx.moveTo(x, 2 * heightDelta);
+	// ctx.lineTo(x*3, 2 * heightDelta);
+	// ctx.stroke();
 }
 
 function calculateDelta(value) {

@@ -23,6 +23,15 @@ function drawTicTacToe(x, y, w, h){
 	ctx.moveTo(2 * widthDelta, y);
 	ctx.lineTo(2 * widthDelta, h);
 	ctx.stroke();
+
+	//horizontal
+	ctx.moveTo(x, heightDelta);
+	ctx.lineTo(w, heightDelta);
+	ctx.stroke();
+
+	ctx.moveTo(x, 2 * heightDelta);
+	ctx.lineTo(w, 2 * heightDelta);
+	ctx.stroke();
 }
 
 init();

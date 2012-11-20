@@ -1,15 +1,3 @@
-// var width = window.innerWidth;
-// var height = window.innerHeight;
-// var c = document.getElementById('c');
-// var ctx = c.getContext('2d');
-// c.width = width;
-// c.height = height;
-
-// function
-
-// //ctx.moveTo(0,0);
-// //ctx.lineTo(600,300);
-// //ctx.stroke();
 var width = window.innerWidth;
 var height = window.innerHeight;
 var c = document.getElementById('c');
@@ -22,21 +10,19 @@ function init(){
 }
 
 function drawTicTacToe(x, y, w, h){
-	ctx.moveTo(x, y);	
+	ctx.moveTo(x, y);
+
+	var widthDelta = w/3;
+	var heightDelta = h/3;
 	
 	//vertical lines
-	ctx.moveTo(x + w/3, y);
-	ctx.lineTo(x + w/3, h);
+	ctx.moveTo(x + widthDelta, y);
+	ctx.lineTo(x + widthDelta, h);
 	ctx.stroke();
 
-	// ctx.moveTo(x + (2* w/3), y);
-	// ctx.lineTo(x + (2* w/3), h);
-	// ctx.stroke();
-
-	// //horizontal lines
-	// ctx.moveTo(x, y + h/3);
-	// ctx.lineTo(x, w);
-	// ctx.stroke();
+	ctx.moveTo(2 * widthDelta, y);
+	ctx.lineTo(2 * widthDelta, h);
+	ctx.stroke();
 }
 
 init();

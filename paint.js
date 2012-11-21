@@ -6,7 +6,7 @@ c.width = width;
 c.height = height;
 
 function init(){	
-	drawTicTacToe(480,480,width,height);
+	draw(0,0,width,height);
 }
 function draw(x,y,w,h,start){
 
@@ -18,7 +18,7 @@ function draw(x,y,w,h,start){
 
 		if (w == width && h == height) {
 			
-			drawTicTacToe(0,0,w,h);
+			drawTicTacToe(y,x,w,h);
 
 			newWidth = calculateDelta(w);
 			newHeight = calculateDelta(h);
@@ -46,26 +46,26 @@ function draw(x,y,w,h,start){
 
 function drawTicTacToe(x, y, w, h){
 
-	var widthDelta = calculateDelta(w);
-	var heightDelta = calculateDelta(h);
-	
-	//vertical lines
-	ctx.moveTo(x + widthDelta, y);
-	ctx.lineTo(x + widthDelta, h);
-	ctx.stroke();
+ 	var widthDelta = calculateDelta(w);
+ 	var heightDelta = calculateDelta(h);
+  
+ 	//vertical lines
+ 	ctx.moveTo(x + widthDelta, y);
+ 	ctx.lineTo(x + widthDelta, y+h);
+ 	ctx.stroke();
 
-	ctx.moveTo(2 * widthDelta, y);
-	ctx.lineTo(2 * widthDelta, h);
-	ctx.stroke();
+ 	ctx.moveTo(x + (2 * widthDelta), y);
+ 	ctx.lineTo(x + (2 * widthDelta), y+h);
+ 	ctx.stroke();
 
-	// //horizontal
-	// ctx.moveTo(x, heightDelta);
-	// ctx.lineTo(x*3, heightDelta);
-	// ctx.stroke();
+ 	//horizontal
+ 	ctx.moveTo(x, y + heightDelta);
+ 	ctx.lineTo(x + w, y + heightDelta);
+ 	ctx.stroke();
 
-	// ctx.moveTo(x, 2 * heightDelta);
-	// ctx.lineTo(x*3, 2 * heightDelta);
-	// ctx.stroke();
+ 	ctx.moveTo(x, y + (2 * heightDelta));
+ 	ctx.lineTo(x + w, y + (2 * heightDelta));
+ 	ctx.stroke();
 }
 
 function calculateDelta(value) {

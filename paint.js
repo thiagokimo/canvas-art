@@ -1,7 +1,7 @@
-//var width = window.innerWidth;
-var width = 720;
-//var height = window.innerHeight;
-var height = 720;
+var width = window.innerWidth;
+//var width = 720;
+var height = window.innerHeight;
+//var height = 720;
 var c = document.getElementById('c');
 var ctx = c.getContext('2d');
 c.width = width;
@@ -11,25 +11,25 @@ function init(){
 	
 	for(var i = 0; i < width; i++) {
 		for(var j = 0; j < height; j++) {
-			if(isPixelInsideCenter(i,j)) {
-				drawRect(i,j,'#000000');
+			if(isPixelInsideCenter(i,j,2,2,2)) {
+				fillPoint(i,j,'#000000');
 			}
 		}
 	}
 }
 
-function isPixelInsideCenter(x,y) {
-	while(x>0&&y>0) //when either of these reaches zero the pixel is determined to be on the edge at that square level and must be filled
+function isPixelInsideCenter(x,y,fillFactor,XDecrementFactor,YDecrementFactor) {
+	while(x>0&&y>0) //stop condition
         {
-            if(x%3===1 && y%3===1) //checks if the pixel is in the center for the current square level
+            if(x%fillFactor===1 && y%fillFactor===1) 
                 return 0;
-            x = Math.floor(x/3); //x and y are decremented to check the next larger square level
-            y = Math.floor(y/3);
+            x = Math.floor(x/XDecrementFactor); 
+            y = Math.floor(y/YDecrementFactor);
         }
-        return 1; //if all possible square levels are checked and the pixel is not determined to be open it must be filled
+        return 1;
 }
 
-function drawRect (x,y,color) {
+function fillPoint (x,y,color) {
     ctx.fillStyle=color;
     ctx.beginPath();
     ctx.fillRect(x,y,1,1);

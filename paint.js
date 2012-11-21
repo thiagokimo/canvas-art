@@ -1,5 +1,7 @@
-var width = window.innerWidth;
-var height = window.innerHeight;
+//var width = window.innerWidth;
+var width = 720;
+//var height = window.innerHeight;
+var height = 720;
 var c = document.getElementById('c');
 var ctx = c.getContext('2d');
 c.width = width;
@@ -9,14 +11,14 @@ function init(){
 	
 	for(var i = 0; i < width; i++) {
 		for(var j = 0; j < height; j++) {
-			if(isSierpinskiCarpetPixelFilled(i,j)) {
+			if(isPixelInsideCenter(i,j)) {
 				drawRect(i,j,'#000000');
 			}
 		}
 	}
 }
 
-function isSierpinskiCarpetPixelFilled(x,y) {
+function isPixelInsideCenter(x,y) {
 	while(x>0&&y>0) //when either of these reaches zero the pixel is determined to be on the edge at that square level and must be filled
         {
             if(x%3===1 && y%3===1) //checks if the pixel is in the center for the current square level

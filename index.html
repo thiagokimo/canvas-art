@@ -8,14 +8,25 @@
         <link href='css/style.css' media='screen' rel='stylesheet' type='text/css'/>
         <!-- JS -->
 		<script type="text/javascript" src="js/dat.gui.min.js"></script>
+        <script type="text/javascript" src="js/canvas.js"></script>
 
     </head>
     <body>
         <canvas id='canvas'></canvas>
-        <script type="text/javascript" src="js/canvas.js"></script>
         <script type="text/javascript">
-        	ImageCanvas.setup();
-        	ImageCanvas.draw();
+            
+            window.onload = function() {
+                ImageCanvas.setup();
+                var gui = new dat.GUI();
+
+                var f1 = gui.addFolder('Parameters:');
+
+                f1.add(ImageCanvas, 'fillFactor');
+                f1.add(ImageCanvas, 'XDecrement');
+                f1.add(ImageCanvas, 'YDecrement');
+
+                gui.add(ImageCanvas, "draw");
+            }
         </script>
     </body>
 </html>

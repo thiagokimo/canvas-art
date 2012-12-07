@@ -3,6 +3,9 @@ var ImageCanvas = {
 	height : window.innerHeight,
 	canvas : null,
 	context: null,
+	fillFactor: 3,
+	XDecrement: 3,
+	YDecrement: 3,
 	//this.c.width: width,
 	//this.c.height: height,
 	
@@ -26,10 +29,12 @@ var ImageCanvas = {
 		//FIXME
 		//this.resizeCanvas(width,height);
 
+		this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
 		for(var i = 0; i < this.width; i++) {
 			for(var j = 0; j < this.height; j++) {
 
-				if(this.isPixelInsideCenter(i,j,3,3,3)) {
+				if(this.isPixelInsideCenter(i,j,this.fillFactor,this.XDecrement,this.YDecrement)) {
 					this.fillPoint(i,j,'#1B87E0');
 				}
 			}

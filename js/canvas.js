@@ -62,6 +62,10 @@ var ImageCanvas = {
     	this.context.fill();
 	},
 
+	save: function() {
+    window.open( this.canvas.toDataURL('image/png'), 'mywindow' );
+  	},
+
 	/*
   	*  Resizes the canvas to fit within the screen, based on a given image width/height
   	*/

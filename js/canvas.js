@@ -3,6 +3,7 @@ var ImageCanvas = {
 	height : window.innerHeight,
 	canvas : null,
 	context: null,
+	color: "#000000",
 	fillFactor: 3,
 	XDecrement: 3,
 	YDecrement: 3,
@@ -10,6 +11,7 @@ var ImageCanvas = {
 	//this.c.height: height,
 	
 	setup : function(){
+
 		this.canvas = this.canvas = document.getElementById( 'canvas' );
     	this.context = canvas.getContext( '2d' );
     	
@@ -35,7 +37,7 @@ var ImageCanvas = {
 			for(var j = 0; j < this.height; j++) {
 
 				if(this.isPixelInsideCenter(i,j,this.fillFactor,this.XDecrement,this.YDecrement)) {
-					this.fillPoint(i,j,'#1B87E0');
+					this.fillPoint(i,j,this.color);
 				}
 			}
 		}

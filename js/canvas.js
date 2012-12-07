@@ -33,14 +33,20 @@ var ImageCanvas = {
 
 		this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-		for(var i = 0; i < this.width; i++) {
-			for(var j = 0; j < this.height; j++) {
+		if (this.XDecrement <= 1 || this.YDecrement <= 1) {
+			alert('X and Y decrement values needs to be greater than 1');
+		} 
+		else{
+			for(var i = 0; i < this.width; i++) {
+				for(var j = 0; j < this.height; j++) {
 
-				if(this.isPixelInsideCenter(i,j,this.fillFactor,this.XDecrement,this.YDecrement)) {
-					this.fillPoint(i,j,this.color);
+					if(this.isPixelInsideCenter(i,j,this.fillFactor,this.XDecrement,this.YDecrement)) {
+						this.fillPoint(i,j,this.color);
+					}
 				}
 			}
 		}
+		
 	},
 
 	isPixelInsideCenter : function(x,y,fillFactor,XDecrement,YDecrement) {

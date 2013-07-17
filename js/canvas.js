@@ -7,31 +7,31 @@ var ImageCanvas = {
 	fillFactor: 3,
 	XDecrement: 3,
 	YDecrement: 3,
-	//this.c.width: width,
-	//this.c.height: height,
-	
+
 	setup : function(){
 
 		this.canvas = this.canvas = document.getElementById( 'canvas' );
-    	this.context = canvas.getContext( '2d' );
+    this.context = canvas.getContext( '2d' );
+
+    this.resizeCanvas(this.width,this.height);
     	
-    	if (window.innerHeight + 80 > window.innerWidth - 100)
-      	this.canvas.width = window.innerWidth - 100;
-    	else {
-      		this.canvas.width = window.innerHeight + 80;
-    	}
-    	this.canvas.height = window.innerHeight - 100;
-    	this.canvas.style.marginLeft = -this.canvas.width/2 + 'px';
-    	this.canvas.style.marginTop = -this.canvas.height/2 + 'px';
-    	this.canvas.style.display = 'block'
+  	// if (window.innerHeight + 80 > window.innerWidth - 100) {
+   //    this.canvas.width = window.innerWidth - 100;
+   //  }
+  	// else {
+   //  		this.canvas.width = window.innerHeight + 80;
+  	// }
+  	// this.canvas.height = window.innerHeight - 100;
+  	this.canvas.style.marginLeft = -this.canvas.width/2 + 'px';
+  	this.canvas.style.marginTop = -this.canvas.height/2 + 'px';
+  	this.canvas.style.display = 'block'
 	},
 
 	draw : function() {
 
-		//FIXME
-		//this.resizeCanvas(width,height);
+		this.resizeCanvas(this.width,this.height);
 
-		this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+		this.clear();
 
 		if (this.XDecrement <= 1 || this.YDecrement <= 1) {
 			alert('X and Y decrement values needs to be greater than 1');
@@ -52,8 +52,10 @@ var ImageCanvas = {
 	isPixelInsideCenter : function(x,y,fillFactor,XDecrement,YDecrement) {
 		while(x>0&&y>0) //stop condition
         	{
-            	if(x%fillFactor===1 && y%fillFactor===1) 
-                	return 0;
+            	if(x%fillFactor===1 && y%fillFactor===1) {
+                return 0;
+              }
+                
                 
             	x = Math.floor(x/XDecrement);
             	y = Math.floor(y/YDecrement);
@@ -81,8 +83,8 @@ var ImageCanvas = {
 
 	    var newWidth, newHeight;
 
-	    var availableWidth = window.innerWidth - 100;
-	    var availableHeight = window.innerHeight - 100;
+	    var availableWidth = window.innerWidth - 350;
+	    var availableHeight = window.innerHeight - 350;
 
 	    // If the image is too big for the screen... scale it down.
 	    if ( width > availableWidth || height > availableHeight ) {
@@ -101,5 +103,9 @@ var ImageCanvas = {
 	    this.canvas.height = newHeight//window.innerHeight;
 	    this.canvas.style.marginLeft = -this.canvas.width/2 + 'px';
 	    this.canvas.style.marginTop = -this.canvas.height/2 + 'px';
-	}
+	},
+
+  clear : function () {
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  }  
 }

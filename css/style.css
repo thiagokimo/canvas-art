@@ -22,3 +22,10 @@ canvas {
   right: 60px;
   background-repeat: no-repeat;
 }
+
+#title {
+  background-image: url(http://thiagokimo.github.io/canvas-art/images/title.png);
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}

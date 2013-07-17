@@ -12,3 +12,13 @@ canvas {
 	left: 50%;
 	top: 50%;
 }
+
+#info{
+  background-image: url(http://thiagokimo.github.io/canvas-art/images/info.png);
+  width: 130px;
+  z-index: -1;
+  height: 95px;
+  position: absolute;
+  top: 137px;
+  right: 90px
+  }

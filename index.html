@@ -5,13 +5,16 @@
         <meta name="description" content="Playing with HTML5 Canvas">
         
         <!-- CSS -->
-        <link href='http://thiagokimo.github.io/canvas-art/css/style.css' media='screen' rel='stylesheet' type='text/css'/>
+        <link href='css/style.css' media='screen' rel='stylesheet' type='text/css'/>
         <!-- JS -->
-		<script type="text/javascript" src="http://thiagokimo.github.io/canvas-art/js/dat.gui.min.js"></script>
-        <script type="text/javascript" src="http://thiagokimo.github.io/canvas-art/js/canvas.js"></script>
+		<script type="text/javascript" src="js/dat.gui.min.js"></script>
+        <script type="text/javascript" src="js/canvas.js"></script>
 
     </head>
     <body>
+        
+        <div id="info"></div>
+        
         <canvas id='canvas'></canvas>
         <script type="text/javascript">
             
@@ -26,6 +29,7 @@
                 f1.add(ImageCanvas, 'XDecrement');
                 f1.add(ImageCanvas, 'YDecrement');
 
+                gui.add(ImageCanvas, "clear")
                 gui.add(ImageCanvas, "save");
                 gui.add(ImageCanvas, "draw");
 

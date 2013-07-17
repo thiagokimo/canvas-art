@@ -10,6 +10,7 @@ canvas {
 	display: none;
 	left: 50%;
 	top: 50%;
+  margin: 50px;
 }
 
 #info{
@@ -25,6 +26,9 @@ canvas {
 
 #title {
   background-image: url(http://thiagokimo.github.io/canvas-art/images/title.png);
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
   display: block;
   margin-right: auto;
   margin-left: auto;

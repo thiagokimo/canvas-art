@@ -1,5 +1,5 @@
 body {
-	background: #EEE url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAIAAADZSiLoAAAAHElEQVQIHWP48+fP9+/f////zwCkgBwQC4ghAACODRqkCkEF0QAAAABJRU5ErkJggg==) repeat;
+  background: url(http://thiagokimo.github.io/canvas-art/images/body-background.png) #eae6d1;
 	overflow: hidden;
 	margin: 0px;
 }

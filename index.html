@@ -26,9 +26,9 @@
                 var f1 = gui.addFolder('Parameters:');
 
                 f1.addColor(ImageCanvas, 'color');
-                f1.add(ImageCanvas, 'fillFactor');
-                f1.add(ImageCanvas, 'XDecrement');
-                f1.add(ImageCanvas, 'YDecrement');
+                f1.add(ImageCanvas, 'fillFactor').min(2);
+                f1.add(ImageCanvas, 'XDecrement').min(2);
+                f1.add(ImageCanvas, 'YDecrement').min(2);
 
                 gui.add(ImageCanvas, "clear")
                 gui.add(ImageCanvas, "save");

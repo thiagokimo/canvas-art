@@ -7,6 +7,13 @@ body {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
 }
 
+a,
+a:hover,
+a:active,
+a:visited {
+  color: blue;
+}
+
 header {
   text-align: center;
 }

@@ -1,7 +1,38 @@
 body {
   background: url(http://thiagokimo.github.io/canvas-art/images/body-background.png) #eae6d1;
-	overflow: hidden;
-	margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  width: 960px;
+  margin: 0 auto;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 4em;
+  margin-bottom: 0;
+}
+
+header p {
+  font-weight: 300;
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+
+section {
+  height: 400px;
+  margin: 2em 0;
+  width: 960px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+footer {
+  display: block;
+  text-align: center;
 }
 
 canvas {
@@ -22,13 +53,4 @@ canvas {
   top: 247px;
   right: 60px;
   background-repeat: no-repeat;
-}
-
-#title {
-  background-image: url(http://thiagokimo.github.io/canvas-art/images/title.png);
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 200px;
-  display: block;
-  margin: 50px auto;
 }

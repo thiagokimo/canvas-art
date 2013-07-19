@@ -6,19 +6,36 @@
         
         <!-- CSS -->
         <link href='http://thiagokimo.github.io/canvas-art/css/style.css' media='screen' rel='stylesheet' type='text/css'/>
+        <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
         <!-- JS -->
-		<script type="text/javascript" src="http://thiagokimo.github.io/canvas-art/js/dat.gui.min.js"></script>
+		    <script type="text/javascript" src="http://thiagokimo.github.io/canvas-art/js/dat.gui.min.js"></script>
         <script type="text/javascript" src="http://thiagokimo.github.io/canvas-art/js/canvas.js"></script>
         <script type="text/javascript" src="http://thiagokimo.github.io/canvas-art/js/datgui.js"></script>
 
     </head>
     <body>
+
+      <header>
+        <h1>Canvas Art</h1>
+        <p>Drawing on canvas using a cute algorithm.</p>
+      </header>
+
+      <section>
         
-        <div id="title"></div>
+          <canvas id='canvas'></canvas>
+        
+      </section>
+        
         <a href="https://github.com/thiagokimo/canvas-art"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
         <div id="info"></div>
+
+
+      <footer>
+        <p>Done with pure javascript. The menu was built using <a href="https://code.google.com/p/dat-gui/">dat.gui</a></p>
+        <p>Experiment by <a href="https://github.com/thiagokimo">thiagokimo</a></p>
+      </footer>
         
-        <canvas id='canvas'></canvas>
+
         <script type="text/javascript">
             
             window.onload = function() {
